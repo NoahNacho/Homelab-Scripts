@@ -1,2 +1,3 @@
-# Homeserver-Install
-Scripts to setup new homeserver 
+# Homeserver-Automation
+Scripts to setup & automate homeserver
+
