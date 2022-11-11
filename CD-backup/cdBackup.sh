@@ -3,9 +3,9 @@
 #should be run as sudo
 
 #variables for multiple ez runs
-SRC="/mnt/media/"
-DEST="/Storage/CDbak/"
-DEVICE="/dev/cdrom"
+SRC="" #where cd is mounted to
+DEST="" #where files will be copied to
+DEVICE="" #what device to mount /dev/cdrom is usually a good choice
 #check for flags
 # -n dirname
 while getopts n: flag
