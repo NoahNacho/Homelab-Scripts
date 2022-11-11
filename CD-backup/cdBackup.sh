@@ -3,10 +3,9 @@
 #should be run as sudo
 
 #variables for multiple ez runs
-SRC="" #where your drive will be mounted to
-DEST="" #full path you want files copied to
-DEVICE="" #/dev/cdrom is usually best
-
+SRC="/mnt/media/"
+DEST="/Storage/CDbak/"
+DEVICE="/dev/cdrom"
 #check for flags
 # -n dirname
 while getopts n: flag
@@ -16,11 +15,12 @@ do
     esac
 done
 
-#check if -n for name was used
+#check if -n was sent
 if test -z "$FILENAME"
 then
-    echo "Please run with -n 'name of cd'"
-    exit 1
+    echo "Dir name not specified, please specify a name to save as:"
+    read FILENAME
+    echo "$FILENAME"
 fi
 
 #actual fun stuff
@@ -29,3 +29,4 @@ DIRPATH="$DEST/$FILENAME"
 mkdir "$DIRPATH"
 cp -r "$SRC" "$DIRPATH"
 eject
+ls "$DIRPATH/media/"
